@@ -1,0 +1,45 @@
+.app-grid-container {
+  /* box-sizing: border-box; */
+  min-height: 100vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 10% 45% 45%;
+  grid-template-rows: 7% 43% 43% 7%;
+  grid-template-areas:
+    'banner banner banner'
+    'nav main main'
+    'nav main main'
+    'footer footer footer';
+}
+
+.banner-placeholder {
+  height: 100%;
+  width: 100%;
+  border: 1px solid black;
+  text-align: center;
+  grid-area: banner;
+}
+
+.nav-placeholder {
+  height: 100%;
+  width: 100%;
+  border: 1px solid black;
+  text-align: center;
+  grid-area: nav;
+}
+
+.main-placeholder {
+  height: 100%;
+  width: 100%;
+  border: 1px solid black;
+  text-align: center;
+  grid-area: main;
+}
+
+.footer-placeholder {
+  height: 100%;
+  width: 100%;
+  border: 1px solid black;
+  text-align: center;
+  grid-area: footer;
+}
