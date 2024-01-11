@@ -1,10 +1,13 @@
-import React, { useEffect, useState } from 'react';
+// Node Module Imports
+import React from 'react';
 
+// Styles
 import './index.css';
 
 function genDummyData(colCount, rowCount) {
   const d = new Array(rowCount).fill(null).map((item, idx) => {
     let arr = [];
+    
     for (let i = 0; i < colCount; i++) {
       arr.push({
         columnName: `COLUMN_${i + 1}`,
@@ -36,6 +39,7 @@ export default function AppTable(props) {
     ]
   }, []);
 
+  // Renderers
   function renderTableData(row) {
     return row.map((field, index) => <td key={`${field.columnName}-${index}`}>{ field.value }</td>);
   }

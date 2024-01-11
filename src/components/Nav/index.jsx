@@ -1,11 +1,11 @@
-// Default Imports
-import { useState } from 'react'
+// Node Module Imports
 import { Link } from "react-router-dom";
 
 // Styles
 import './index.css';
 
 export default function Nav(props) {
+  // Helpers
   const routes = props.routeDefinition.reduce((acc, route) => {
     const routes = [];
 
@@ -23,6 +23,7 @@ export default function Nav(props) {
     ]
   }, []);
 
+  // Renderers
   function renderNavItem(route) {
     return (
       <li key={route.id}>

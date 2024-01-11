@@ -1,19 +1,18 @@
-// Default Imports
+// Node Module Imports
+import React from 'react';
 import {
   createBrowserRouter,
   RouterProvider,
-} from "react-router-dom";
+} from 'react-router-dom';
 
 // Custom Components
 import routeDefinition from './routes';
 
 // Styles
-import './App.css'
+import './App.css';
 
 export default function App() {
   return (
-    <>
-      <RouterProvider router={ createBrowserRouter(routeDefinition) } />
-    </>
-  )
+    <RouterProvider router={createBrowserRouter(routeDefinition)} />
+  );
 }

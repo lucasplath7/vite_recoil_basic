@@ -1,5 +1,7 @@
-import React, { useEffect, useState } from 'react';
+// Node Module Imports
+import React from 'react';
 
+// Styles
 import './index.css';
 
 export default function AppForm(props) {
@@ -7,28 +9,33 @@ export default function AppForm(props) {
     e.preventDefault();
     const data = new FormData(document.getElementById('app-form'));
 
-    for (let i of data) {
+    for (const i of data) {
       console.log(i);
     }
   }
 
   return (
     <form
-      id='app-form'
+      id="app-form"
       onSubmit={handleSubmit}
-      className='app-form'
+      className="app-form"
     >
-      <label htmlFor='firstName'>First Name:</label>
-      <input type='text' id='firstName' name='firstName'/>
-      <label htmlFor='lastName'>Last Name:</label>
-      <input type='text' id='lastName' name='lastName'/>
-      <label htmlFor='birthday'>Birthday:</label>
-      <input type='date' id='birthday' name='birthday'/>
-      <label htmlFor='sendEmailsCheckBox'>Send Emails?</label>
-      <input type='checkbox' id='sendEmailsCheckBox' name='sendEmailsCheckBox'/>
-      <label htmlFor='comments' cols='100' rows='50'>Comments:</label>
-      <textarea id='comments' name='comments'></textarea>
-      <input type='submit' value='Submit' wrap='hard' />
+      <label htmlFor="firstName">First Name:
+        <input type="text" id="firstName" name="firstName" />
+      </label>
+      <label htmlFor="lastName">Last Name:
+        <input type="text" id="lastName" name="lastName" />
+      </label>
+      <label htmlFor="birthday">Birthday:
+        <input type="date" id="birthday" name="birthday" />
+      </label>
+      <label htmlFor="sendEmailsCheckBox">Send Emails?
+        <input type="checkbox" id="sendEmailsCheckBox" name="sendEmailsCheckBox" />
+      </label>
+      <label htmlFor="comments" cols="100" rows="50">Comments:
+        <textarea id="comments" name="comments" />
+      </label>
+      <input type="submit" value="Submit" wrap="hard" />
     </form>
-  )
+  );
 }

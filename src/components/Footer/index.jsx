@@ -2,12 +2,20 @@
 import './index.css';
 
 export default function Footer(props) {
+  const {
+    className,
+    contactEmail,
+    author,
+  } = props;
+
   return (
-    <footer role='footer' className={`${props.className} footer`}>
-      <p className='footer-content'>
-        Author: {props.author}<br/>
-        <a href={`mailto:${props.contactEmail}`}>{props.contactEmail}</a>
+    <footer role="contentinfo" className={`${className} footer`}>
+      <p className="footer-content">
+        Author:
+        {author}
+        <br />
+        <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
       </p>
     </footer>
-  )
+  );
 }

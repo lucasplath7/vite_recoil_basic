@@ -5,6 +5,7 @@ import AppForm from './components/Form';
 import Spinner from './components/Spinner';
 import AppTable from './components/Table';
 import Animation from './components/Animation';
+import Users from './components/Users';
 
 export default [
   {
@@ -46,6 +47,13 @@ export default [
         forNav: true,
         label: 'ANIMATION',
         element: <Animation />
+      },
+      {
+        path: '/users',
+        id: 'users-path',
+        forNav: true,
+        label: 'USERS',
+        element: <Users />
       },
     ]
   },
