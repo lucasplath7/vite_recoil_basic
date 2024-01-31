@@ -2,6 +2,13 @@
   box-sizing: border-box;
 }
 
+html {
+  /* https://www.smashingmagazine.com/2016/05/fluid-typography/ */
+  /* font-size: calc(10px + 0.390625vw); */
+  /* calc(minFontSize + (maxFontSize - minFontSize) * (100vw - minScreenSize) / (maxScreenSize - minScreenSize)) */
+  font-size: calc(9px + (11 - 9) * (100vw - 400px) / (800 - 400));
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -38,4 +45,10 @@ body{
   button {
     background-color: #f9f9f9;
   }
-} 
+}
+
+@media (max-width:1000px) {
+  .app-grid-container {
+    grid-template-columns: 20% 40% 40%;
+  }
+}

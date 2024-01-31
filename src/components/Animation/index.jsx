@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 // Styles
 import './index.css';
 
-export default function Animation(props) {
+export default function Animation() {
   // Hooks
   useEffect(() => {
     const pupils = document.querySelectorAll('.pupil');
@@ -14,6 +14,7 @@ export default function Animation(props) {
         const rect = pupil.getBoundingClientRect();
         const x = `${(e.pageX - rect.left) / 80}px`;
         const y = `${(e.pageY - rect.top) / 80}px`;
+        // eslint-disable-next-line no-param-reassign
         pupil.style.transform = `translate3d(${x},${y},0px)`;
       });
     });

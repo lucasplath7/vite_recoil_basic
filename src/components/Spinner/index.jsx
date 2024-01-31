@@ -4,8 +4,8 @@ import React from 'react';
 // Styles
 import './index.css';
 
-export default function Spinner(props) {
+export default function Spinner() {
   return (
-    <div className='app-spinner' />
-  )
+    <div className="app-spinner" />
+  );
 }

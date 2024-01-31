@@ -6,10 +6,11 @@ import Spinner from './components/Spinner';
 import AppTable from './components/Table';
 import Animation from './components/Animation';
 import Users from './components/Users';
+import FluidFontDemo from './components/FluidFontDemo';
 
 export default [
   {
-    path: "/",
+    path: '/',
     element: <Layout />,
     id: 'home-path-root',
     children: [
@@ -18,43 +19,50 @@ export default [
         id: 'home-path',
         forNav: true,
         label: 'HOME',
-        element: <Home />
+        element: <Home />,
       },
       {
         path: '/form',
         id: 'form-path',
         forNav: true,
         label: 'FORM',
-        element: <AppForm />
+        element: <AppForm />,
       },
       {
         path: '/spinner',
         id: 'spinner-path',
         forNav: true,
         label: 'SPINNER',
-        element: <Spinner />
+        element: <Spinner />,
       },
       {
         path: '/table',
         id: 'table-path',
         forNav: true,
         label: 'TABLE',
-        element: <AppTable />
+        element: <AppTable />,
       },
       {
         path: '/animation',
         id: 'animation-path',
         forNav: true,
         label: 'ANIMATION',
-        element: <Animation />
+        element: <Animation />,
       },
       {
         path: '/users',
         id: 'users-path',
         forNav: true,
         label: 'USERS',
-        element: <Users />
+        element: <Users />,
       },
-    ]
+      {
+        path: '/font',
+        id: 'font-path',
+        forNav: true,
+        label: 'FONT DEMO',
+        element: <FluidFontDemo />,
+      },
+    ],
   },
-]
+];

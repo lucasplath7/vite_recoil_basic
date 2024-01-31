@@ -9,7 +9,7 @@ const usersAtom = atom({
     error: null,
     selectedUserId: null,
     users: null,
-  }
+  },
 });
 
 export default usersAtom;

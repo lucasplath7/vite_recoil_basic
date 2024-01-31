@@ -2,9 +2,11 @@
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content: center; 
+  justify-content: center;
+  flex-direction: column;
 }
 
 .footer-content {
   text-align: center;
+  margin: 0;
 }

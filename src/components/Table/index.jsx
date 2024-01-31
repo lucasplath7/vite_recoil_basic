@@ -6,13 +6,13 @@ import './index.css';
 
 function genDummyData(colCount, rowCount) {
   const d = new Array(rowCount).fill(null).map((item, idx) => {
-    let arr = [];
-    
+    const arr = [];
+
     for (let i = 0; i < colCount; i++) {
       arr.push({
         columnName: `COLUMN_${i + 1}`,
-        value: `r${idx + 1}c${i + 1}`
-      })
+        value: `r${idx + 1}c${i + 1}`,
+      });
     }
 
     return arr;
@@ -27,7 +27,7 @@ export default function AppTable(props) {
   const data = props.tableData || dummyData;
   const columns = data.reduce((acc, record) => {
     const columnNames = [];
-    record.forEach(field => {
+    record.forEach((field) => {
       if (!acc.includes(field.columnName)) {
         columnNames.push(field.columnName);
       }
@@ -36,7 +36,7 @@ export default function AppTable(props) {
     return [
       ...acc,
       ...columnNames,
-    ]
+    ];
   }, []);
 
   // Renderers
@@ -47,28 +47,28 @@ export default function AppTable(props) {
   function renderTableRows() {
     return (
       <tbody>
-        { data.map((row, index) => <tr key={index}>{ renderTableData(row) }</tr> )}
+        {data.map((row, index) => <tr key={index}>{ renderTableData(row) }</tr>)}
       </tbody>
-    )
+    );
   }
 
   function renderTableHeader() {
     return (
       <thead>
         <tr>
-          { columns.map(col => <th key={col}>{ col }</th>)}
+          { columns.map((col) => <th key={col}>{ col }</th>)}
         </tr>
       </thead>
-    )
+    );
   }
 
   function renderTable() {
     return (
-      <table className='app-table'>
+      <table className="app-table">
         { renderTableHeader() }
         { renderTableRows() }
       </table>
-    )
+    );
   }
 
   return renderTable();

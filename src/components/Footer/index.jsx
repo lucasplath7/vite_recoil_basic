@@ -13,9 +13,8 @@ export default function Footer(props) {
       <p className="footer-content">
         Author:
         {author}
-        <br />
-        <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
       </p>
+      <a href={`mailto:${contactEmail}`} className="footer-content">{contactEmail}</a>
     </footer>
   );
 }

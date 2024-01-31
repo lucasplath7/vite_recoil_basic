@@ -4,11 +4,15 @@ import React from 'react';
 // Styles
 import './index.css';
 
-export default function AppForm(props) {
+export default function AppForm() {
   function handleSubmit(e) {
     e.preventDefault();
-    const data = new FormData(document.getElementById('app-form'));
+    const data = new FormData(
+      document.getElementById('app-form'),
+    );
 
+    // overriding for demo purposes needing this syntax
+    // eslint-disable-next-line no-restricted-syntax
     for (const i of data) {
       console.log(i);
     }

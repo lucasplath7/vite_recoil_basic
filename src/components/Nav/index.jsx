@@ -1,26 +1,28 @@
 // Node Module Imports
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 // Styles
 import './index.css';
 
 export default function Nav(props) {
+  const { routeDefinition, className } = props;
+
   // Helpers
-  const routes = props.routeDefinition.reduce((acc, route) => {
-    const routes = [];
+  const routes = routeDefinition.reduce((acc, route) => {
+    const navRoutes = [];
 
     if (route.children) {
       route.children.forEach((childRoute) => {
-        childRoute.forNav ? (routes.push(childRoute)) : null;
-      })
+        if (childRoute.forNav) navRoutes.push(childRoute);
+      });
     }
 
-    route.forNav ? (routes.push(route)) : null;
+    if (route.forNav) navRoutes.push(route);
 
     return [
       ...acc,
-      ...routes,
-    ]
+      ...navRoutes,
+    ];
   }, []);
 
   // Renderers
@@ -31,19 +33,19 @@ export default function Nav(props) {
           {route.label}
         </Link>
       </li>
-    )
+    );
   }
 
   function renderNavList() {
     return (
       <ul>
-        { routes.map(routeId => renderNavItem(routeId)) }
+        { routes.map((routeId) => renderNavItem(routeId)) }
       </ul>
-    )
+    );
   }
 
   return (
-    <div className={'nav ' + props.className}>
+    <div className={`nav ${className}`}>
       { renderNavList() }
     </div>
   );

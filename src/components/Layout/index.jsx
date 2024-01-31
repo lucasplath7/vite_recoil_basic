@@ -1,5 +1,5 @@
 // Node Module Imports
-import { Outlet } from "react-router-dom";
+import { Outlet } from 'react-router-dom';
 
 // Custom Components
 import Banner from '../Banner';
@@ -8,27 +8,27 @@ import Nav from '../Nav';
 import routeDefinition from '../../routes';
 
 // Styles
-import './index.css'
+import './index.css';
 
-export default function Layout(props) {
+export default function Layout() {
   return (
-    <div className='app-grid-container'>
+    <div className="app-grid-container">
       <Banner
-        title='VITE_RECOIL_BASIC'
-        className='app-banner'
+        title="VITE_RECOIL_BASIC"
+        className="app-banner"
       />
       <Nav
-        routeDefinition={ routeDefinition }
-        className='app-nav'
+        routeDefinition={routeDefinition}
+        className="app-nav"
       />
-      <div className='main-content'>
+      <div className="main-content">
         <Outlet />
       </div>
       <Footer
-        className='app-footer'
-        contactEmail='lucas.plath@gmail.com'
-        author='Lucas Plath'
+        className="app-footer"
+        contactEmail="lucas.plath@gmail.com"
+        author="Lucas Plath"
       />
     </div>
-  )
+  );
 }

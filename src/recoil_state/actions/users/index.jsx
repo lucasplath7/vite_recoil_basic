@@ -3,25 +3,24 @@ import { useRecoilState } from 'recoil';
 import axios from 'axios';
 
 // Custom Imports
-import usersAtom from '../../state/users.jsx';
+import usersAtom from '../../state/users';
 
 function userActions() {
   const [users, setUsers] = useRecoilState(usersAtom);
 
   async function fetchAllUsers() {
-
     setUsers({
       ...users,
-      fetching: true
+      fetching: true,
     });
 
     axios.get('http://localhost:3001/api/user')
-      .then(resp => {
+      .then((resp) => {
         const userData = resp.data.reduce((acc, user) => {
           return {
             ...acc,
             [user.id]: user,
-          }
+          };
         }, {});
 
         setUsers({
@@ -30,25 +29,23 @@ function userActions() {
           fetching: false,
         });
       })
-      .catch(error => {
-        console.log('error: ', error)
+      .catch((error) => {
         setUsers({
           ...users,
           fetching: false,
-          error: error,
+          error,
         });
       });
   }
 
   async function createUser(userData) {
-
     setUsers({
       ...users,
-      creating: true
+      creating: true,
     });
 
     axios.post('http://localhost:3001/api/user', userData)
-      .then(resp => {
+      .then((resp) => {
         setUsers({
           ...users,
           users: {
@@ -58,45 +55,41 @@ function userActions() {
               first_name: userData.firstName,
               last_name: userData.lastName,
               email: userData.email,
-            }
+            },
           },
           creating: false,
         });
       })
-      .catch(error => {
-        console.log('error: ', error)
+      .catch((error) => {
         setUsers({
           ...users,
           fetching: false,
-          error: error,
+          error,
         });
       });
   }
 
   async function deleteUser(userId) {
-
     setUsers({
       ...users,
-      deleting: true
+      deleting: true,
     });
 
     axios.delete(`http://localhost:3001/api/user/${userId}`)
-      .then(resp => {
-        console.log('resp data: ', resp.data)
+      .then(() => {
         const { [userId]: deletedUser, ...restOfUsers } = users.users;
 
         setUsers({
           ...users,
-          users: {...restOfUsers},
+          users: { ...restOfUsers },
           deleting: false,
         });
       })
-      .catch(error => {
-        console.log('error: ', error)
+      .catch((error) => {
         setUsers({
           ...users,
           deleting: false,
-          error: error,
+          error,
         });
       });
   }
@@ -105,7 +98,7 @@ function userActions() {
     createUser,
     fetchAllUsers,
     deleteUser,
-  }
+  };
 }
 
 export default userActions;
