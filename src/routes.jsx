@@ -7,6 +7,7 @@ import AppTable from './components/Table';
 import Animation from './components/Animation';
 import Users from './components/Users';
 import FluidFontDemo from './components/FluidFontDemo';
+import SpeedRead from './components/SpeedRead';
 
 export default [
   {
@@ -62,6 +63,13 @@ export default [
         forNav: true,
         label: 'FONT DEMO',
         element: <FluidFontDemo />,
+      },
+      {
+        path: '/speedread',
+        id: 'speedread-path',
+        forNav: true,
+        label: 'SPEED READ',
+        element: <SpeedRead />,
       },
     ],
   },
